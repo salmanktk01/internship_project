@@ -1,0 +1,54 @@
+->activities\homeactivity; file is bottom navagtionbar..
+->activities/keygenactivity; file is to navigate from secret to cinic(will there it is login) when user fill the key or else it would be emty or least 6 character long.
+->activities/loginactivity ; file is to navigate from login(cinic) to provide code (will there it is login) when user fill the key or else it would be emty or least 13 character long...
+->activities/splashactivity ;kinda of splash screen..
+->Self-Signed User Certificate (certificate is used for trust and secure connection,i.e mobile app and server side) we will provide him the cinic and 
+secret key...(Will gonna stored locally that stuff)...
+  -> we will uploaded that certficate to server side and is signed by    
+    trust authroity and give you a client certficate ,then justd download
+    the ceritificate and saved in mobile...
+   ->well in that process we will use encryption and decreption method where 
+     mobile app use the self signed one and server use client certificate
+     and pub
+
+->That permission in flutter should get access like that in mainfest file.
+
+    ->For Android (in android/app/src/main/AndroidManifest.xml) location !!!
+     \<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+-> for permission=100 stuff there is a package in flutter called permission_handler to handle this
+issues... code we might used 
+    ->  void requestExternalStoragePermission() async {
+    if (await Permission.storage.request().isGranted) {
+      // Permission is granted, you can proceed with external storage access.
+    } else {
+      // Permission is denied, handle the case accordingly.
+    }
+  } 
+
+->oncreate function there can be simple done by using controller stuff...
+   ->just returing the value of cinic and secret key from the edit text field...
+->createSLLcontext() function 
+   ->server to server communcation so we will gonna use that http stuff
+     ->NOTE: HTTPS is the secure version of HTTP and uses TLS/SSL encryption to protect data during transmission.
+     ->For example, if your backend server is hosted at https://example.com and you have an API endpoint /data that you want 
+     ->to request data from, you would use the following code:
+     ->mport 'package:http/http.dart' as http;
+
+     Future<void> fetchData() async {
+     var url = Uri.https('example.com', '/data');
+     var response = await http.get(url);
+
+     if (response.statusCode == 200) {
+    // Request succeeded, handle the response
+    print(response.body);
+     } else {
+    // Request failed, handle the error
+    print('Request failed with status: ${response.statusCode}');
+     }
+    }
+->gotoactivity() function
+   ->here we are just checking the secret code length stuff and if it passes all the stuff then
+    ->it will retrieve the data using getuserdata( )function
+    ->progress indicator show untill data being fetched...
+1322 line
