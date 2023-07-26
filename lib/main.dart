@@ -5,7 +5,6 @@ import 'package:internship_project/view/Secret_Screen.dart';
 import 'package:internship_project/view/Start_Screen.dart';
 
 void main() {
-  Storebinding().dependencies();
   runApp(const MyApp());
 }
 
@@ -17,6 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: StartScreen(),
+      initialBinding: Storebinding(),
     );
   }
 }

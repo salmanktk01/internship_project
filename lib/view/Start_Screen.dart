@@ -25,7 +25,7 @@ class StartScreen extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(15, 20, 15, 10),
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.to(() => const SecretScreen());
+                      Get.to(() => SecretScreen());
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
@@ -45,7 +45,7 @@ class StartScreen extends StatelessWidget {
           ),
         ),
         onTap: () {
-          Get.to(() => const SecretScreen());
+          Get.to(() => SecretScreen());
         },
       ),
     );

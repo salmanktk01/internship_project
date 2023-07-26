@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 
 /// We Will Use this class for making the UI desgin of secret key ,CNIC and provided code *
 class CustomFormPage extends StatelessWidget {
