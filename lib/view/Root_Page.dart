@@ -8,10 +8,10 @@ import 'package:internship_project/view/Setting_Screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   final navbar = Get.find<navbarcontroller>();
-  List<Widget> widgetoption = const [
+  List<Widget> widgetoption = [
     HomeScreen(),
-    QrScreen(),
-    SettingScreen(),
+    const QrScreen(),
+    const SettingScreen(),
   ];
 
   @override

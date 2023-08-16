@@ -1,8 +1,12 @@
+import 'dart:typed_data';
+import 'package:convert/convert.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:internship_project/controller/CustomformController.dart';
+import 'package:internship_project/controller/Genrate_Certificate.dart';
 import 'package:internship_project/view/Custom_Class.dart';
-import 'package:internship_project/view/Root_Page.dart';
+import 'package:pointycastle/ecc/api.dart';
 
 class CodeScreen extends StatelessWidget {
   final cfc = Get.put(CustomFormController());
@@ -22,6 +26,22 @@ class CodeScreen extends StatelessWidget {
               cfc.showValidationErrorDialog(context, errorMessage);
             } else {
               cfc.validateAndProceed(context, "PROVIDED CODE");
+              Uint8List message = Uint8List.fromList("Hello, world!".codeUnits);
+
+              // Generate private key
+              Uint8List privateKeyBytes = EntityCryptoModule()
+                  .generatePrivateKey(
+                      cfc.cnicController.text, cfc.codecontroller.text);
+              print("Private Key: ${hex.encode(privateKeyBytes)}");
+
+              // Generate public key
+              ECPublicKey publicKey =
+                  EntityCryptoModule().generatePublicKey(privateKeyBytes);
+
+              // Sign message
+              Uint8List signature =
+                  EntityCryptoModule().signMessage(privateKeyBytes, message);
+              print("Signature: ${hex.encode(signature)}");
             }
           },
           edittext: cfc.codecontroller,

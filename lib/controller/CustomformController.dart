@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:internship_project/view/CNIC_Screen.dart';
 import 'package:internship_project/view/CodeScreen.dart';
-import 'package:internship_project/view/Custom_Class.dart';
+
 import 'package:internship_project/view/Root_Page.dart';
-import 'package:internship_project/view/Secret_Screen.dart';
 
 class CustomFormController extends GetxController {
   //Controller use to save edit text field data

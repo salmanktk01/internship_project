@@ -9,7 +9,7 @@ class Storebinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut<navbarcontroller>(() => navbarcontroller(), fenix: true);
-    Get.lazyPut<Home_Controller>(() => Home_Controller());
+    Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
     Get.lazyPut<CustomFormController>(() => CustomFormController(),
         fenix: true);
   }
